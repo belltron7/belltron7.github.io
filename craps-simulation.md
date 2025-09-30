@@ -7,6 +7,7 @@ By the end of this blog you'll be able to see how probability and simulation exp
 Simulation is a powerful tool in data science because it lets us model complex real-world processes with just a few lines of code. By running thousands of trials in seconds, we can see the patterns that would take hours—or even days—to collect manually. Whether it’s casinos, finance, or scientific experiments, simulation helps us bridge the gap between theory and practice.
 
 ![Craps table layout](craps_table.jpg)  
+
 *Example of a craps table.*  
 
 
