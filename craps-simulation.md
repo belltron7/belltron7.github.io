@@ -1,4 +1,4 @@
-### Simulating Craps in Python: A Comparison of Real Play to Expected Outcomes
+# Simulating Craps in Python: A Comparison of Real Play to Expected Outcomes
 
 Ever wondered what it's like to gamble? Well in this tutorial we will simulate the game "Craps" in Python and compare the results to real-world data that I have collected from about 3 hours of actual casino play. 
 
