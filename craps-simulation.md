@@ -4,6 +4,11 @@ Ever wondered what it's like to gamble? Well in this tutorial we will simulate t
 
 By the end of this blog you'll be able to see how probability and simulation explain why the house always wins in the long run, even if you're lucky in the short term. 
 
+Simulation is a powerful tool in data science because it lets us model complex real-world processes with just a few lines of code. By running thousands of trials in seconds, we can see the patterns that would take hours—or even days—to collect manually. Whether it’s casinos, finance, or scientific experiments, simulation helps us bridge the gap between theory and practice.
+
+![Craps table layout](craps_table.jpg)  
+*Example of a craps table.*  
+
 
 ## A Speedrun of the Rules of Craps
 
@@ -24,6 +29,8 @@ If your number rolls before a 7, you win; if a 7 rolls first, you lose.
 This simple structure makes Craps great for simulation: the rules are easy to code, but the outcomes depend on probability and luck.
 
 We’ll keep our simulation focused on the Pass Line bet, but I’ll mention my own side bets on 6 and 8 when comparing to real casino play.
+
+For a full breakdown of the rules, see [Craps Basics at the Venetian Casino](https://www.venetianlasvegas.com/resort/casino/table-games/craps-basic-rules.html).
 
 
 ## My Casino Data
