@@ -1,7 +1,3 @@
----
-title: "Welcome"
----
-
 # MY BLOG
 
 Hi, I’m **Nick Bell** — this is my blog 
