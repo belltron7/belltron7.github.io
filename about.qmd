@@ -2,9 +2,8 @@
 title: "About Me"
 ---
 
-# About Me
 
-![Photo of Nick Bell](images/nickbell.jpg){width=200px style="border-radius:50%;"}
+![Photo of Me and my wife Brittany](images/nickbellimage.jpg){width=200px style="border-radius:50%;"}
 
 ## Education
 - **Brigham Young University**, B.S. in Applied Statistics  
@@ -14,12 +13,13 @@ title: "About Me"
 ## Experience
 - **Air Force ROTC Cadet**, BYU Detachment 855  
   Leadership, operations planning, and performance tracking  
-- **Student Analyst Projects:** STAT 330 and STAT 340 data-science labs  
+- **University Statistic Classes:** STAT 330 and STAT 340 data-science labs 
+- **Advanced Course in Engineering (ACE)**, Prestigious intership in New York working closely with the NSA to build systems for penetration testing. 
 
 ## Skills
 - **Programming & Tools:** Python (pandas, matplotlib), R, SQL, Git, Linux  
 - **Data Skills:** EDA, modeling, visualization, statistical inference  
-- **Soft Skills:** leadership, communication, team coordination  
+- **Other Skills:** leadership, communication, team coordination  
 
 ## Get to Know Me
 Outside of class, I enjoy running, lifting, and exploring new tech.  
@@ -28,4 +28,4 @@ I’m passionate about getting better everyday, whether it’s fitness, faith, o
 
 ---
 
-**Connect with me:** [GitHub](https://github.com/belltron7)
+**Connect with me:** [GitHub](https://github.com/belltron7), belltron7@gmail.com
