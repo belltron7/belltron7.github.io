@@ -9,3 +9,4 @@ This is for my BYU **STAT 386** coursework, but I will also use it for projects,
 - Occasional reflections on learning, leadership, and life
 
 Thanks for stopping by — feel free to explore the posts or check out my [About Me](about.qmd) page to learn more!
+ 
