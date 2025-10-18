@@ -1,0 +1,100 @@
+[
+  {
+    "objectID": "craps-simulation.html",
+    "href": "craps-simulation.html",
+    "title": "Simulating Craps in Python: A Comparison of Real Play to Expected Outcomes",
+    "section": "",
+    "text": "Ever wondered what it’s like to gamble? Well in this tutorial we will simulate the game “Craps” in Python and compare the results to real-world data that I have collected from about 3 hours of actual casino play.\nBy the end of this blog you’ll be able to see how probability and simulation explain why the house always wins in the long run, even if you’re lucky in the short term.\nSimulation is a powerful tool in data science because it lets us model complex real-world processes with just a few lines of code. By running thousands of trials in seconds, we can see the patterns that would take hours—or even days—to collect manually. Whether it’s casinos, finance, or scientific experiments, simulation helps us bridge the gap between theory and practice.\n\n\n\nCraps table layout\n\n\nExample of a craps table.\n\n\nCraps is a dice game played with 2 six-sided dice. While there are a lot of rules and nuances in craps, I will be keeping it to the most basic level for quick understanding. The most common bet is called the Pass Line Bet which works like this:\n\nOn the first roll (the “come-out roll”):\n\nA 7 or 11 means you win immediately.\nA 2, 3, or 12 means you lose immediately.\nAny other number (4, 5, 6, 8, 9, 10) becomes the “point.”\n\nOnce a point is set:\n\nYou keep rolling until either the point repeats (you win) or a 7 appears (you lose).\n\n\nWhile the point is set at a number you can make a place bet where you can bet on a specific number (4, 5, 6, 8, 9, 10) to be rolled before the 7 is rolled. The most common are betting on 6 or 8, because they have higher chances of appearing (5 out of 36 dice combinations).\nIf your number rolls before a 7, you win; if a 7 rolls first, you lose.\nThis simple structure makes Craps great for simulation: the rules are easy to code, but the outcomes depend on probability and luck.\nWe’ll keep our simulation focused on the Pass Line bet, but I’ll mention my own side bets on 6 and 8 when comparing to real casino play.\nFor a full breakdown of the rules, see Craps Basics at the Venetian Casino.\n\n\n\nOver about 3 hours of play, I recorded the outcome of each dice roll at the craps table.\nHere’s a rough summary of the outcomes I observed (out of ~320 total rolls):\n\n\n\nDice Total\nCount\n\n\n\n\n2\n9\n\n\n3\n18\n\n\n4\n27\n\n\n5\n36\n\n\n6\n44\n\n\n7\n54\n\n\n8\n46\n\n\n9\n38\n\n\n10\n28\n\n\n11\n15\n\n\n12\n5\n\n\n\nThis gives us a rough distribution of the totals rolled. Later, we’ll compare this to the expected probabilities from simulation.\n\n\n\nNow we will look at a simple Craps simulator I am just going to focus on the Pass Line Bet, but I will also keep track of how often each number appears and we can compare it to my data.\nimport random\nfrom collections import Counter\n\ndef roll_dice():\n    return random.randint(1, 6) + random.randint(1, 6)\n\ndef simulate_passline(rounds=100000):\n    wins = 0\n    losses = 0\n    roll_counts = Counter()\n\n    for _ in range(rounds):\n        first = roll_dice()\n        roll_counts[first] += 1\n\n        # Come-out roll rules\n        if first in [7, 11]:\n            wins += 1\n        elif first in [2, 3, 12]:\n            losses += 1\n        else:\n            # A point is established\n            point = first\n            while True:\n                roll = roll_dice()\n                roll_counts[roll] += 1\n                if roll == point:\n                    wins += 1\n                    break\n                elif roll == 7:\n                    losses += 1\n                    break\n\n    return wins, losses, roll_counts\n\n# Run the simulation\nwins, losses, roll_counts = simulate_passline(100000)\n\nprint(f\"Wins: {wins}, Losses: {losses}, Win %: {wins / (wins + losses):.3f}\")\nprint(\"Sample of roll counts:\")\nfor total in range(2, 13):\n    print(total, roll_counts[total])\n\n\n\nHere’s a side-by-side comparison of my data against the simulation (100,000 trials).\n\n\n\nDice Total\nCasino %\nSimulated %\n\n\n\n\n2\n2.81%\n2.781%\n\n\n3\n5.63%\n5.564%\n\n\n4\n8.44%\n8.322%\n\n\n5\n11.25%\n10.955%\n\n\n6\n13.75%\n13.905%\n\n\n7\n16.88%\n16.795%\n\n\n8\n14.38%\n13.772%\n\n\n9\n11.88%\n11.245%\n\n\n10\n8.75%\n8.480%\n\n\n11\n4.69%\n5.471%\n\n\n12\n1.56%\n2.710%\n\n\n\nThe simulated percentages line up very closely with the theoretical probabilities of two dice.\nMy real data has more variation because 320 rolls is a relatively small sample, but the overall pattern is consistent.\n\n\n\nBy comparing a few hours of real casino play to a large Python simulation, we can see how the math of Craps plays out in practice.\nThe distribution of my real dice rolls closely matched the theoretical probabilities, even though short-term luck caused some swings.\nThe simulation doesn’t just show the dice totals — it also keeps track of how many times you win versus how many times you lose.\nThis makes it easy to see how close your experience lines up with the true odds: in the long run, the house edge ensures you’ll lose slightly more often than you win.\n\n\n\nNow that you’ve seen how to simulate Craps and compare it to real play, try running the Python code yourself.\nWatch the output to see not only the distribution of dice totals but also how many times you win versus lose.\nExperiment with more or fewer trials, try different bankrolls or betting strategies, and see how the outcomes shift.\nWhether you test it in an online simulator, explore with code, or bet your child’s college fund, you’ll quickly see how hard it is to beat the house edge. Good luck!"
+  },
+  {
+    "objectID": "craps-simulation.html#a-speedrun-of-the-rules-of-craps",
+    "href": "craps-simulation.html#a-speedrun-of-the-rules-of-craps",
+    "title": "Simulating Craps in Python: A Comparison of Real Play to Expected Outcomes",
+    "section": "",
+    "text": "Craps is a dice game played with 2 six-sided dice. While there are a lot of rules and nuances in craps, I will be keeping it to the most basic level for quick understanding. The most common bet is called the Pass Line Bet which works like this:\n\nOn the first roll (the “come-out roll”):\n\nA 7 or 11 means you win immediately.\nA 2, 3, or 12 means you lose immediately.\nAny other number (4, 5, 6, 8, 9, 10) becomes the “point.”\n\nOnce a point is set:\n\nYou keep rolling until either the point repeats (you win) or a 7 appears (you lose).\n\n\nWhile the point is set at a number you can make a place bet where you can bet on a specific number (4, 5, 6, 8, 9, 10) to be rolled before the 7 is rolled. The most common are betting on 6 or 8, because they have higher chances of appearing (5 out of 36 dice combinations).\nIf your number rolls before a 7, you win; if a 7 rolls first, you lose.\nThis simple structure makes Craps great for simulation: the rules are easy to code, but the outcomes depend on probability and luck.\nWe’ll keep our simulation focused on the Pass Line bet, but I’ll mention my own side bets on 6 and 8 when comparing to real casino play.\nFor a full breakdown of the rules, see Craps Basics at the Venetian Casino."
+  },
+  {
+    "objectID": "craps-simulation.html#my-casino-data",
+    "href": "craps-simulation.html#my-casino-data",
+    "title": "Simulating Craps in Python: A Comparison of Real Play to Expected Outcomes",
+    "section": "",
+    "text": "Over about 3 hours of play, I recorded the outcome of each dice roll at the craps table.\nHere’s a rough summary of the outcomes I observed (out of ~320 total rolls):\n\n\n\nDice Total\nCount\n\n\n\n\n2\n9\n\n\n3\n18\n\n\n4\n27\n\n\n5\n36\n\n\n6\n44\n\n\n7\n54\n\n\n8\n46\n\n\n9\n38\n\n\n10\n28\n\n\n11\n15\n\n\n12\n5\n\n\n\nThis gives us a rough distribution of the totals rolled. Later, we’ll compare this to the expected probabilities from simulation."
+  },
+  {
+    "objectID": "craps-simulation.html#time-to-simulate-craps-in-python",
+    "href": "craps-simulation.html#time-to-simulate-craps-in-python",
+    "title": "Simulating Craps in Python: A Comparison of Real Play to Expected Outcomes",
+    "section": "",
+    "text": "Now we will look at a simple Craps simulator I am just going to focus on the Pass Line Bet, but I will also keep track of how often each number appears and we can compare it to my data.\nimport random\nfrom collections import Counter\n\ndef roll_dice():\n    return random.randint(1, 6) + random.randint(1, 6)\n\ndef simulate_passline(rounds=100000):\n    wins = 0\n    losses = 0\n    roll_counts = Counter()\n\n    for _ in range(rounds):\n        first = roll_dice()\n        roll_counts[first] += 1\n\n        # Come-out roll rules\n        if first in [7, 11]:\n            wins += 1\n        elif first in [2, 3, 12]:\n            losses += 1\n        else:\n            # A point is established\n            point = first\n            while True:\n                roll = roll_dice()\n                roll_counts[roll] += 1\n                if roll == point:\n                    wins += 1\n                    break\n                elif roll == 7:\n                    losses += 1\n                    break\n\n    return wins, losses, roll_counts\n\n# Run the simulation\nwins, losses, roll_counts = simulate_passline(100000)\n\nprint(f\"Wins: {wins}, Losses: {losses}, Win %: {wins / (wins + losses):.3f}\")\nprint(\"Sample of roll counts:\")\nfor total in range(2, 13):\n    print(total, roll_counts[total])"
+  },
+  {
+    "objectID": "craps-simulation.html#comparing-real-vs-simulated-results",
+    "href": "craps-simulation.html#comparing-real-vs-simulated-results",
+    "title": "Simulating Craps in Python: A Comparison of Real Play to Expected Outcomes",
+    "section": "",
+    "text": "Here’s a side-by-side comparison of my data against the simulation (100,000 trials).\n\n\n\nDice Total\nCasino %\nSimulated %\n\n\n\n\n2\n2.81%\n2.781%\n\n\n3\n5.63%\n5.564%\n\n\n4\n8.44%\n8.322%\n\n\n5\n11.25%\n10.955%\n\n\n6\n13.75%\n13.905%\n\n\n7\n16.88%\n16.795%\n\n\n8\n14.38%\n13.772%\n\n\n9\n11.88%\n11.245%\n\n\n10\n8.75%\n8.480%\n\n\n11\n4.69%\n5.471%\n\n\n12\n1.56%\n2.710%\n\n\n\nThe simulated percentages line up very closely with the theoretical probabilities of two dice.\nMy real data has more variation because 320 rolls is a relatively small sample, but the overall pattern is consistent."
+  },
+  {
+    "objectID": "craps-simulation.html#conclusion",
+    "href": "craps-simulation.html#conclusion",
+    "title": "Simulating Craps in Python: A Comparison of Real Play to Expected Outcomes",
+    "section": "",
+    "text": "By comparing a few hours of real casino play to a large Python simulation, we can see how the math of Craps plays out in practice.\nThe distribution of my real dice rolls closely matched the theoretical probabilities, even though short-term luck caused some swings.\nThe simulation doesn’t just show the dice totals — it also keeps track of how many times you win versus how many times you lose.\nThis makes it easy to see how close your experience lines up with the true odds: in the long run, the house edge ensures you’ll lose slightly more often than you win."
+  },
+  {
+    "objectID": "craps-simulation.html#call-to-action",
+    "href": "craps-simulation.html#call-to-action",
+    "title": "Simulating Craps in Python: A Comparison of Real Play to Expected Outcomes",
+    "section": "",
+    "text": "Now that you’ve seen how to simulate Craps and compare it to real play, try running the Python code yourself.\nWatch the output to see not only the distribution of dice totals but also how many times you win versus lose.\nExperiment with more or fewer trials, try different bankrolls or betting strategies, and see how the outcomes shift.\nWhether you test it in an online simulator, explore with code, or bet your child’s college fund, you’ll quickly see how hard it is to beat the house edge. Good luck!"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About Me",
+    "section": "",
+    "text": "Photo of Me and my wife Brittany"
+  },
+  {
+    "objectID": "about.html#education",
+    "href": "about.html#education",
+    "title": "About Me",
+    "section": "Education",
+    "text": "Education\n\nBrigham Young University, B.S. in Applied Statistics\nExpected Graduation: April 2026\n\nAdditional coursework in Computer Science & Data Science"
+  },
+  {
+    "objectID": "about.html#experience",
+    "href": "about.html#experience",
+    "title": "About Me",
+    "section": "Experience",
+    "text": "Experience\n\nAir Force ROTC Cadet, BYU Detachment 855\nLeadership, operations planning, and performance tracking\n\nUniversity Statistic Classes: STAT 330 and STAT 340 data-science labs\nAdvanced Course in Engineering (ACE), Prestigious intership in New York working closely with the NSA to build systems for penetration testing."
+  },
+  {
+    "objectID": "about.html#skills",
+    "href": "about.html#skills",
+    "title": "About Me",
+    "section": "Skills",
+    "text": "Skills\n\nProgramming & Tools: Python (pandas, matplotlib), R, SQL, Git, Linux\n\nData Skills: EDA, modeling, visualization, statistical inference\n\nOther Skills: leadership, communication, team coordination"
+  },
+  {
+    "objectID": "about.html#get-to-know-me",
+    "href": "about.html#get-to-know-me",
+    "title": "About Me",
+    "section": "Get to Know Me",
+    "text": "Get to Know Me\nOutside of class, I enjoy running, lifting, and exploring new tech.\nI’m a huge fan of chess, audiobooks, and spending time with family and friends.\nI’m passionate about getting better everyday, whether it’s fitness, faith, or problem-solving.\n\nConnect with me: GitHub, belltron7@gmail.com"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "MY BLOG",
+    "section": "",
+    "text": "Hi, I’m Nick Bell — this is my blog This is for my BYU STAT 386 coursework, but I will also use it for projects, interests, and other statistic related things.\n\n\n\nWalkthroughs of my coding and data-analysis projects\n\nNotes from classes and tutorials\n\nOccasional reflections on learning, leadership, and life\n\nThanks for stopping by — feel free to explore the posts or check out my About Me page to learn more!"
+  },
+  {
+    "objectID": "index.html#what-youll-find-here",
+    "href": "index.html#what-youll-find-here",
+    "title": "MY BLOG",
+    "section": "",
+    "text": "Walkthroughs of my coding and data-analysis projects\n\nNotes from classes and tutorials\n\nOccasional reflections on learning, leadership, and life\n\nThanks for stopping by — feel free to explore the posts or check out my About Me page to learn more!"
+  }
+]
