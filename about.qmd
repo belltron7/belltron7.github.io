@@ -6,26 +6,26 @@ title: "About Me"
 
 ![Photo of Nick Bell](images/nickbell.jpg){width=200px style="border-radius:50%;"}
 
-## 🎓 Education
+## Education
 - **Brigham Young University**, B.S. in Applied Statistics  
   *Expected Graduation:* April 2026  
 - Additional coursework in Computer Science & Data Science
 
-## 💼 Experience
+## Experience
 - **Air Force ROTC Cadet**, BYU Detachment 855  
   Leadership, operations planning, and performance tracking  
 - **Student Analyst Projects:** STAT 330 and STAT 340 data-science labs  
 
-## 🧠 Skills
+## Skills
 - **Programming & Tools:** Python (pandas, matplotlib), R, SQL, Git, Linux  
 - **Data Skills:** EDA, modeling, visualization, statistical inference  
 - **Soft Skills:** leadership, communication, team coordination  
 
-## 🌎 Get to Know Me
+## Get to Know Me
 Outside of class, I enjoy running, lifting, and exploring new tech.  
 I’m a huge fan of chess, audiobooks, and spending time with family and friends.  
-I’m passionate about continual improvement — whether it’s fitness, faith, or problem-solving.
+I’m passionate about getting better everyday, whether it’s fitness, faith, or problem-solving.
 
 ---
 
-📫 **Connect with me:** [GitHub](https://github.com/belltron7)
+**Connect with me:** [GitHub](https://github.com/belltron7)
