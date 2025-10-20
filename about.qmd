@@ -12,9 +12,24 @@ title: "About Me"
 
 ## Experience
 - **Air Force ROTC Cadet**, BYU Detachment 855  
-  Leadership, operations planning, and performance tracking  
-- **University Statistic Classes:** STAT 330 and STAT 340 data-science labs 
-- **Advanced Course in Engineering (ACE)**, Prestigious intership in New York working closely with the NSA to build systems for penetration testing. 
+   I currently serve as a cadet in one of the nation’s largest AFROTC detachments. Current responsibilities include:
+  - Leading and training underclassmen in leadership labs and group leadership problems
+  - Planning operations, PT schedules, and event logistics for wing-level training
+  - Practicing decision-making, accountability, and followership in mission-style environments
+
+  Upon graduation I will comission as 2nd Leiutenant and move to Mississippi where I will work as a Data and Research Analyst for the United States Air Force
+
+
+- **Advanced Course in Engineering (ACE) Cyber Internship (NSA Partnership)**, 
+  - In 2024 I was selected for a nationally competitive summer program in New York focused on cyber operations and offensive security. I worked with Department of Defense and NSA mentors on penetration-testing challenges. 
+  - I helped build and evaluate tools and protocols for network exploitation and adversarial attack simulations, all while learning secure system designs and techincal reporting under classified constraints. Each week I participated in a team "challenge problem" focused on some aspect of cybersecurity, and present a solution and an advanced write-up. Each week also included an 8 mile challenge run that had to be completed in under 90 min. This internship challenged me mentally as well as physically. I maintain in contact with many of my ACE cohorts today, including members of the Royal Air Force in England, and data sciencetists from Switzerland. 
+
+
+- **University Statistic Classes:** Upper level University Level Statistic classes  
+  - Hands-on labs and case studies involving real-world datasets
+  - Implemented regression, inference, and Monte-Carlo simulation methods
+  - Built reproducible reports using R/Python, Git, and Quarto
+
 
 ## Skills
 - **Programming & Tools:** Python (pandas, matplotlib), R, SQL, Git, Linux  
@@ -22,9 +37,13 @@ title: "About Me"
 - **Other Skills:** leadership, communication, team coordination  
 
 ## Get to Know Me
-Outside of class, I enjoy running, lifting, and exploring new tech.  
-I’m a huge fan of chess, audiobooks, and spending time with family and friends.  
-I’m passionate about getting better everyday, whether it’s fitness, faith, or problem-solving.
+Outside of school and ROTC, I spend a lot of time training — I love running, and have run multiple half and full marathons, lifting heavy, and tracking progress over time. I enjoy the discipline and structure that comes with fitness, and I treat it like a long-term project.
+
+I almost always has an audiobook going: mostly fantasy, leadership, history, or military memoirs — occasionally mixed with a sci-fi break. If I’m not listening to something, I’m probably playing chess online, playing Marvel SNAP (my favorite mobile game), or learning some new random skill just to see if I can.
+
+I’ve been married to my wonderful and beautiful wife Brittany and we spend most of our weekends with friends, cooking, watching movies, or visiting family. Faith and family are big for me as they anchor everything else I do.
+
+At the end of the day, I strive to become better every single day in some aspect of my life, whether it’s fitness, coding, leadership, or character. I like making goals, structure, and building systems that make improvement inevitable.
 
 ---
 
